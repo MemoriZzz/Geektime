@@ -7,13 +7,13 @@
 
 #import "ViewController.h"
 
-@interface TestView : UIView
+
+@interface ViewController ()
 
 @end
 
-@implementation TestView
+@implementation ViewController
 
-// override init
 - (instancetype) init{
     self = [super init];
     if(self){
@@ -23,37 +23,28 @@
     return self;
 }
 
-// methods about life cycle
-- (void)willMoveToSuperview:(nullable UIView *)newSuperview{
+- (void)viewWillAppear:(BOOL)animated{
     //Breakpoint here:
-    [super willMoveToSuperview:newSuperview];
+    [super viewWillAppear:animated];
 }
-- (void)didMoveToSuperview{
+- (void)viewDidAppear:(BOOL)animated{
     //Breakpoint here:
-    [super didMoveToSuperview];
+    [super viewDidAppear:animated];
 }
-- (void)willMoveToWindow:(nullable UIWindow *)newWindow{
+- (void)viewWillDisappear:(BOOL)animated{
     //Breakpoint here:
-    [super willMoveToWindow:newWindow];
+    [super viewWillDisappear:animated];
 }
-- (void)didMoveToWindow{
-    
-    [super didMoveToWindow];
+- (void)viewDidDisappear:(BOOL)animated{
+    //Breakpoint here:
+    [super viewDidDisappear:animated];
 }
 
-@end
 
-
-
-@interface ViewController ()
-
-@end
-
-@implementation ViewController
 
 - (void)viewDidLoad {
     //Breakpoint here:
-    TestView *myView = [[TestView alloc] init];
+    UIView *myView = [[UIView alloc] init];
     myView.backgroundColor = [UIColor redColor];
     myView.frame = CGRectMake(100, 100, 100, 100);
     //Breakpoint here:
