@@ -25,15 +25,14 @@
     
     //a navigation controller needs a root view
     ViewController *viewController = [[ViewController alloc] init];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    
     
     //create 4 view controller and set their background colors.
-    
-//    UIViewController *viewController1 = [[UIViewController alloc]init];
-    navigationController.view.backgroundColor = [UIColor systemRedColor]; //set news page as navigation controller
-    navigationController.tabBarItem.title = @"news";
-    navigationController.tabBarItem.image = [UIImage imageNamed:@"file path1"];
-    navigationController.tabBarItem.selectedImage = [UIImage imageNamed:@"file path2"];
+
+    viewController.view.backgroundColor = [UIColor systemRedColor];
+    viewController.tabBarItem.title = @"news";
+    viewController.tabBarItem.image = [UIImage imageNamed:@"file path1"];
+    viewController.tabBarItem.selectedImage = [UIImage imageNamed:@"file path2"];
     
     
     UIViewController *viewController2 = [[UIViewController alloc]init];
@@ -55,12 +54,12 @@
     viewController4.tabBarItem.selectedImage = [UIImage imageNamed:@"file path8"];
     
     //add 4 view controllers to tabbar controller
-    [tabbarController setViewControllers:@[navigationController, viewController2, viewController3, viewController4]];
+    [tabbarController setViewControllers:@[viewController, viewController2, viewController3, viewController4]];
     
-    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:tabbarController];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = tabbarController; //set tabbarController as default (no longer a single view)
+    self.window.rootViewController = navigationController; //set tabbarController as default (no longer a single view)
     [self.window makeKeyAndVisible];
     
     
