@@ -8,7 +8,7 @@
 #import "ViewController.h"
 
 
-@interface ViewController ()
+@interface ViewController () <UITableViewDataSource>
 
 @end
 
@@ -18,29 +18,30 @@
     
     self.view.backgroundColor = [UIColor whiteColor]; //set view controller color
     
-    UIView *suqare = [[UIView alloc] init];
-    suqare.backgroundColor = [UIColor systemTealColor];
-    suqare.frame = CGRectMake(148, 150, 100, 100);
-    [self.view addSubview:suqare];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds]; // create a tableview whose size is as same as view;
+    tableView.dataSource = self; //use viewController to implement data source functions
     
-    self.navigationItem.title = @"NEWS";
     
-    //create gesture
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushController)];
-    //add gesture to myView(a teal view)
-    [suqare addGestureRecognizer:tapGesture];
+    [self.view addSubview:tableView];
+    
+    
 
 }
-- (void)pushController{
-    UIViewController *viewController = [[UIViewController alloc] init];
-    viewController.navigationItem.title = @"CONTENT";
-    viewController.view.backgroundColor = [UIColor systemRedColor];
+//UITableViewDataSource required method 1
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 20;
+}
+
+//UITableViewDataSource required method 2
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    //add right button
-    viewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"RIGHT" style:UIBarButtonItemStylePlain target:self action:nil];
+    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
+    cell.textLabel.text = @"MAIN HEADING";
+    cell.detailTextLabel.text = @"SUB HEADING";
+    cell.imageView.image = [UIImage imageNamed:@"image/path"];
     
     
-    [self.navigationController pushViewController:viewController animated:YES];
+    return cell;
 }
 
 
