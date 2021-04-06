@@ -7,7 +7,7 @@
 
 #import "RecommendViewController.h"
 
-@interface RecommendViewController ()
+@interface RecommendViewController () <UIScrollViewDelegate>
 
 @end
 
@@ -45,13 +45,31 @@
     }
     //enable pages
     scrollView.pagingEnabled = YES;
-    
+    scrollView.delegate = self;
     
     [self.view addSubview:scrollView];
-    
-    
 }
 
+//UIScrollViewDelegate optional methods
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+//    NSLog(@"offset: [%@, %@]", @(scrollView.contentOffset.x),  @(scrollView.contentOffset.y));
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+//    NSLog(@"will begin dragging");
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+//    NSLog(@"did end dragging");
+}
+
+- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{
+//    NSLog(@"will begin decelerating");
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+//    NSLog(@"did end decelerating");
+}
 
 
 @end
