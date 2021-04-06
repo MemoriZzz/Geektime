@@ -8,7 +8,7 @@
 #import "NewsViewController.h"
 
 
-@interface NewsViewController () <UITableViewDataSource>
+@interface NewsViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @end
 
@@ -28,27 +28,40 @@
 
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds]; // create a tableview whose size is as same as view;
     tableView.backgroundColor = [UIColor systemRedColor];
-    tableView.dataSource = self; //use viewController to implement data source functions
+    
+    tableView.dataSource = self;
+    tableView.delegate = self;
+    
     [self.view addSubview:tableView];
     
     
 
 }
-//UITableViewDataSource required method 1
+//UITableViewDataSource required methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 20;
 }
 
-//UITableViewDataSource required method 2
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
-    cell.textLabel.text = @"MAIN HEADING";
+    cell.textLabel.text = [NSString localizedStringWithFormat: @"MAIN HEADING - %@", @(indexPath.row)];
     cell.detailTextLabel.text = @"SUB HEADING";
     cell.imageView.image = [UIImage imageNamed:@"image/path"];
     
-    
     return cell;
+}
+
+//UITableViewDelegate optional methods
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 100;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UIViewController *somenews = [[UIViewController alloc] init];
+    somenews.title = [NSString stringWithFormat:@"%@", @(indexPath.row)];
+    somenews.view.backgroundColor = [UIColor whiteColor];
+    [self.navigationController pushViewController:somenews animated:NO];
 }
 
 

@@ -7,7 +7,7 @@
 
 #import "VideoViewController.h"
 
-@interface VideoViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface VideoViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @end
 
@@ -41,26 +41,19 @@
     
 }
 
-//UICollectionViewDataSource required method 1
+//UICollectionViewDataSource required methods
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return 20;
 }
 
-//UICollectionViewDataSource required method 2
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"UICollectionViewCell" forIndexPath:indexPath];
     cell.backgroundColor = [UIColor systemGrayColor];
     return cell;
 }
 
-/*
-#pragma mark - Navigation
+//UICollectionViewDelegate optional methods
+//...
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
