@@ -16,19 +16,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    
-    
-    //create a tabbar controller
-    UITabBarController *tabbarController  = [[UITabBarController alloc] init];
-    
-    
-    //a navigation controller needs a root view
-    ViewController *viewController = [[ViewController alloc] init];
-    
-    
-    //create 4 view controller and set their background colors.
 
+    //create 4 view controller and set their background colors.
+    ViewController *viewController = [[ViewController alloc] init]; //viewController has its own contents
     viewController.view.backgroundColor = [UIColor systemRedColor];
     viewController.tabBarItem.title = @"news";
     viewController.tabBarItem.image = [UIImage imageNamed:@"file path1"];
@@ -53,11 +43,16 @@
     viewController4.tabBarItem.image = [UIImage imageNamed:@"file path7"];
     viewController4.tabBarItem.selectedImage = [UIImage imageNamed:@"file path8"];
     
-    //add 4 view controllers to tabbar controller
-    [tabbarController setViewControllers:@[viewController, viewController2, viewController3, viewController4]];
+    //create a tabbar controller
+    UITabBarController *tabbarController  = [[UITabBarController alloc] init];
     
+    //add 4 view controllers to tabbar controller
+    [tabbarController setViewControllers:@[viewController, viewController2, viewController3, viewController4]];    
+    
+    //init navigation controller with tabbar controller (nc needs a root view)
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:tabbarController];
     
+    //set nc to window
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = navigationController; //set tabbarController as default (no longer a single view)
     [self.window makeKeyAndVisible];
