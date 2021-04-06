@@ -8,7 +8,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UITabBarControllerDelegate> //@protovol <UITabBarControllerDelegate>
 
 @end
 
@@ -47,7 +47,11 @@
     UITabBarController *tabbarController  = [[UITabBarController alloc] init];
     
     //add 4 view controllers to tabbar controller
-    [tabbarController setViewControllers:@[viewController, viewController2, viewController3, viewController4]];    
+    [tabbarController setViewControllers:@[viewController, viewController2, viewController3, viewController4]];
+    
+    
+    //@protovol <UITabBarControllerDelegate>
+    tabbarController.delegate = self;
     
     //init navigation controller with tabbar controller (nc needs a root view)
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:tabbarController];
@@ -64,6 +68,11 @@
     return YES;
 }
 
+
+//@protovol <UITabBarControllerDelegate>
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+    NSLog(@"did select");
+}
 
 
 
