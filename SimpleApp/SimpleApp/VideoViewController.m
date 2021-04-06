@@ -16,7 +16,7 @@
 - (instancetype) init{
     self = [super init];
     if(self){
-        self.view.backgroundColor = [UIColor orangeColor];
+        self.view.backgroundColor = [UIColor systemOrangeColor];
         self.tabBarItem.title = @"video";
         self.tabBarItem.image = [UIImage imageNamed:@"file path3"];
         self.tabBarItem.selectedImage = [UIImage imageNamed:@"file path4"];
@@ -27,6 +27,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
+    flowLayout.minimumLineSpacing = 10;
+    flowLayout.minimumInteritemSpacing = 10;
+    flowLayout.itemSize = CGSizeMake((self.view.frame.size.width-10)/2, 300);
+    
+    
     UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:self.view.bounds collectionViewLayout:flowLayout];
     
     collectionView.backgroundColor = [UIColor orangeColor];
@@ -48,12 +53,22 @@
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"UICollectionViewCell" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor systemGrayColor];
+    cell.backgroundColor = [UIColor colorWithRed:247.0/255.0 green:189.0/255.0 blue:131.0/255.0 alpha:1.0 ]; //light orange
     return cell;
 }
 
 //UICollectionViewDelegate optional methods
 //...
+
+
+//UICollectionViewDelegateFlowLayout
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.item %3 ==0){
+        return CGSizeMake(self.view.frame.size.width, 100);
+    }else{
+        return CGSizeMake((self.view.frame.size.width-10)/2, 300);
+    }
+}
 
 
 @end

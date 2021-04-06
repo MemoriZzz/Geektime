@@ -48,6 +48,7 @@
     cell.textLabel.text = [NSString localizedStringWithFormat: @"MAIN HEADING - %@", @(indexPath.row)];
     cell.detailTextLabel.text = @"SUB HEADING";
     cell.imageView.image = [UIImage imageNamed:@"image/path"];
+    cell.backgroundColor = [UIColor colorWithRed:234.0/255.0 green:185.0/255.0 blue:185.0/255.0 alpha:1.0]; //coral
     
     return cell;
 }
@@ -60,7 +61,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     UIViewController *somenews = [[UIViewController alloc] init];
     somenews.title = [NSString stringWithFormat:@"%@", @(indexPath.row)];
-    somenews.view.backgroundColor = [UIColor whiteColor];
+    somenews.view.backgroundColor = [UIColor colorWithRed:234.0/255.0 green:185.0/255.0 blue:185.0/255.0 alpha:1.0]; //coral
     [self.navigationController pushViewController:somenews animated:NO];
 }
 

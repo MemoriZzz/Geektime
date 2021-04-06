@@ -6,8 +6,8 @@
 //
 
 #import "AppDelegate.h"
-#import "NewsViewController.h"
-#import "VideoViewController.h"
+#import "NewsViewController.h" //a UITableView
+#import "VideoViewController.h" //a UICollectionView
 
 @interface AppDelegate ()<UITabBarControllerDelegate> //@protovol <UITabBarControllerDelegate>
 
@@ -48,13 +48,11 @@
     //init navigation controller with tabbar controller (nc needs a root view)
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:tabbarController];
     
+    
     //set nc to window
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = navigationController; //set tabbarController as default (no longer a single view)
+    self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
-    
-    
-    
     
     
     return YES;
@@ -63,7 +61,7 @@
 
 //@protovol <UITabBarControllerDelegate>
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
-    NSLog(@"did select");
+    NSLog(@"select tab bar");
 }
 
 
