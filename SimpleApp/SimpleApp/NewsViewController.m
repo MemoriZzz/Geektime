@@ -1,27 +1,34 @@
 //
-//  ViewController.m
+//  NewsViewController.m
 //  SimpleApp
 //
 //  Created by wangyuqing on 2021/4/5.
 //
 
-#import "ViewController.h"
+#import "NewsViewController.h"
 
 
-@interface ViewController () <UITableViewDataSource>
+@interface NewsViewController () <UITableViewDataSource>
 
 @end
 
-@implementation ViewController
+@implementation NewsViewController
+
+- (instancetype) init{
+    self = [super init];
+    if(self){
+        self.tabBarItem.title = @"news";
+        self.tabBarItem.image = [UIImage imageNamed:@"file path1"];
+        self.tabBarItem.selectedImage = [UIImage imageNamed:@"file path2"];
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
-    
-    self.view.backgroundColor = [UIColor whiteColor]; //set view controller color
-    
+
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds]; // create a tableview whose size is as same as view;
+    tableView.backgroundColor = [UIColor systemRedColor];
     tableView.dataSource = self; //use viewController to implement data source functions
-    
-    
     [self.view addSubview:tableView];
     
     

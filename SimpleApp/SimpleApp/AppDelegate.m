@@ -6,7 +6,8 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "NewsViewController.h"
+#import "VideoViewController.h"
 
 @interface AppDelegate ()<UITabBarControllerDelegate> //@protovol <UITabBarControllerDelegate>
 
@@ -18,18 +19,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     //create 4 view controller and set their background colors.
-    ViewController *viewController = [[ViewController alloc] init]; //viewController has its own contents
-    viewController.view.backgroundColor = [UIColor systemRedColor];
-    viewController.tabBarItem.title = @"news";
-    viewController.tabBarItem.image = [UIImage imageNamed:@"file path1"];
-    viewController.tabBarItem.selectedImage = [UIImage imageNamed:@"file path2"];
-    
-    
-    UIViewController *viewController2 = [[UIViewController alloc]init];
-    viewController2.view.backgroundColor = [UIColor orangeColor];
-    viewController2.tabBarItem.title = @"video";
-    viewController2.tabBarItem.image = [UIImage imageNamed:@"file path3"];
-    viewController2.tabBarItem.selectedImage = [UIImage imageNamed:@"file path4"];
+    NewsViewController *newsViewController = [[NewsViewController alloc] init];
+    VideoViewController *videoViewController = [[VideoViewController alloc]init];
+
     
     UIViewController *viewController3 = [[UIViewController alloc]init];
     viewController3.view.backgroundColor = [UIColor yellowColor];
@@ -47,7 +39,7 @@
     UITabBarController *tabbarController  = [[UITabBarController alloc] init];
     
     //add 4 view controllers to tabbar controller
-    [tabbarController setViewControllers:@[viewController, viewController2, viewController3, viewController4]];
+    [tabbarController setViewControllers:@[newsViewController, videoViewController, viewController3, viewController4]];
     
     
     //@protovol <UITabBarControllerDelegate>

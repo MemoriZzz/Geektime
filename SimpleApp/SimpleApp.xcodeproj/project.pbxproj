@@ -7,19 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01DA20B3261C54C30094F6CD /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DA20B2261C54C30094F6CD /* VideoViewController.m */; };
 		01E22B74261AF13900E542BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E22B73261AF13900E542BA /* AppDelegate.m */; };
-		01E22B7A261AF13900E542BA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E22B79261AF13900E542BA /* ViewController.m */; };
+		01E22B7A261AF13900E542BA /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E22B79261AF13900E542BA /* NewsViewController.m */; };
 		01E22B7F261AF13900E542BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01E22B7E261AF13900E542BA /* Assets.xcassets */; };
 		01E22B82261AF13900E542BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01E22B80261AF13900E542BA /* LaunchScreen.storyboard */; };
 		01E22B85261AF13900E542BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E22B84261AF13900E542BA /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01DA20B1261C54C30094F6CD /* VideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
+		01DA20B2261C54C30094F6CD /* VideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
 		01E22B6F261AF13900E542BA /* SimpleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01E22B72261AF13900E542BA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		01E22B73261AF13900E542BA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		01E22B78261AF13900E542BA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		01E22B79261AF13900E542BA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		01E22B78261AF13900E542BA /* NewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
+		01E22B79261AF13900E542BA /* NewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		01E22B7E261AF13900E542BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01E22B81261AF13900E542BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		01E22B83261AF13900E542BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,12 +61,14 @@
 			children = (
 				01E22B72261AF13900E542BA /* AppDelegate.h */,
 				01E22B73261AF13900E542BA /* AppDelegate.m */,
-				01E22B78261AF13900E542BA /* ViewController.h */,
-				01E22B79261AF13900E542BA /* ViewController.m */,
+				01E22B78261AF13900E542BA /* NewsViewController.h */,
+				01E22B79261AF13900E542BA /* NewsViewController.m */,
 				01E22B7E261AF13900E542BA /* Assets.xcassets */,
 				01E22B80261AF13900E542BA /* LaunchScreen.storyboard */,
 				01E22B83261AF13900E542BA /* Info.plist */,
 				01E22B84261AF13900E542BA /* main.m */,
+				01DA20B1261C54C30094F6CD /* VideoViewController.h */,
+				01DA20B2261C54C30094F6CD /* VideoViewController.m */,
 			);
 			path = SimpleApp;
 			sourceTree = "<group>";
@@ -136,8 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01E22B7A261AF13900E542BA /* ViewController.m in Sources */,
+				01E22B7A261AF13900E542BA /* NewsViewController.m in Sources */,
 				01E22B74261AF13900E542BA /* AppDelegate.m in Sources */,
+				01DA20B3261C54C30094F6CD /* VideoViewController.m in Sources */,
 				01E22B85261AF13900E542BA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
