@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		010E2475261D53DA008E02A2 /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 010E2474261D53DA008E02A2 /* NewsTableViewCell.m */; };
 		010E247D261D80C2008E02A2 /* images.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 010E247C261D80C2008E02A2 /* images.bundle */; };
+		010E2487261DB3E0008E02A2 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010E2486261DB3E0008E02A2 /* MeViewController.m */; };
 		01DA20B3261C54C30094F6CD /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DA20B2261C54C30094F6CD /* VideoViewController.m */; };
 		01DA20BC261C8BE80094F6CD /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DA20BB261C8BE80094F6CD /* RecommendViewController.m */; };
 		01E22B74261AF13900E542BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E22B73261AF13900E542BA /* AppDelegate.m */; };
@@ -22,6 +23,8 @@
 		010E2473261D53DA008E02A2 /* NewsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsTableViewCell.h; sourceTree = "<group>"; };
 		010E2474261D53DA008E02A2 /* NewsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCell.m; sourceTree = "<group>"; };
 		010E247C261D80C2008E02A2 /* images.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = images.bundle; sourceTree = "<group>"; };
+		010E2485261DB3E0008E02A2 /* MeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
+		010E2486261DB3E0008E02A2 /* MeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
 		01DA20B1261C54C30094F6CD /* VideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
 		01DA20B2261C54C30094F6CD /* VideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
 		01DA20BA261C8BE80094F6CD /* RecommendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecommendViewController.h; sourceTree = "<group>"; };
@@ -77,6 +80,8 @@
 				01DA20B2261C54C30094F6CD /* VideoViewController.m */,
 				01DA20BA261C8BE80094F6CD /* RecommendViewController.h */,
 				01DA20BB261C8BE80094F6CD /* RecommendViewController.m */,
+				010E2485261DB3E0008E02A2 /* MeViewController.h */,
+				010E2486261DB3E0008E02A2 /* MeViewController.m */,
 				01E22B7E261AF13900E542BA /* Assets.xcassets */,
 				01E22B80261AF13900E542BA /* LaunchScreen.storyboard */,
 				01E22B83261AF13900E542BA /* Info.plist */,
@@ -157,6 +162,7 @@
 			files = (
 				01E22B7A261AF13900E542BA /* NewsViewController.m in Sources */,
 				01DA20BC261C8BE80094F6CD /* RecommendViewController.m in Sources */,
+				010E2487261DB3E0008E02A2 /* MeViewController.m in Sources */,
 				010E2475261D53DA008E02A2 /* NewsTableViewCell.m in Sources */,
 				01E22B74261AF13900E542BA /* AppDelegate.m in Sources */,
 				01DA20B3261C54C30094F6CD /* VideoViewController.m in Sources */,

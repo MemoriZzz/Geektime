@@ -9,6 +9,7 @@
 #import "NewsViewController.h" //a UITableView
 #import "VideoViewController.h" //a UICollectionView
 #import "RecommendViewController.h" //a UIScrollView
+#import "MeViewController.h" //a UIView
 
 @interface AppDelegate ()<UITabBarControllerDelegate> //@protovol <UITabBarControllerDelegate>
 
@@ -22,21 +23,14 @@
     //create 4 view controller and set their background colors.
     NewsViewController *newsViewController = [[NewsViewController alloc] init];
     VideoViewController *videoViewController = [[VideoViewController alloc]init];
-
-    
     RecommendViewController *recommendViewController = [[RecommendViewController alloc]init];
-    
-    UIViewController *viewController4 = [[UIViewController alloc]init];
-    viewController4.view.backgroundColor = [UIColor greenColor];
-    viewController4.tabBarItem.title = @"me";
-    viewController4.tabBarItem.image = [UIImage imageNamed:@"file path7"];
-    viewController4.tabBarItem.selectedImage = [UIImage imageNamed:@"file path8"];
+    MeViewController *meViewController = [[MeViewController alloc]init];
     
     //create a tabbar controller
     UITabBarController *tabbarController  = [[UITabBarController alloc] init];
     
     //add 4 view controllers to tabbar controller
-    [tabbarController setViewControllers:@[newsViewController, videoViewController, recommendViewController, viewController4]];
+    [tabbarController setViewControllers:@[newsViewController, videoViewController, recommendViewController, meViewController]];
     
     
     //@protovol <UITabBarControllerDelegate>
