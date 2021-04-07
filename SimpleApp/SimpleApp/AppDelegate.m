@@ -6,10 +6,10 @@
 //
 
 #import "AppDelegate.h"
-#import "NewsViewController.h" //a UITableView
-#import "VideoViewController.h" //a UICollectionView
-#import "RecommendViewController.h" //a UIScrollView
-#import "MeViewController.h" //a UIView
+#import "NewsViewController.h" //include a UITableView
+#import "VideoViewController.h" //include a UICollectionView
+#import "RecommendViewController.h" //include a UIScrollView
+#import "MeViewController.h" //include a UIView (with an alert)
 
 @interface AppDelegate ()<UITabBarControllerDelegate> //@protovol <UITabBarControllerDelegate>
 
@@ -20,7 +20,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    //create 4 view controller and set their background colors.
+    //create 4 view controllers
     NewsViewController *newsViewController = [[NewsViewController alloc] init];
     VideoViewController *videoViewController = [[VideoViewController alloc]init];
     RecommendViewController *recommendViewController = [[RecommendViewController alloc]init];

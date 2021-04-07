@@ -16,7 +16,6 @@
 - (instancetype) init{
     self = [super init];
     if(self){
-        self.view.backgroundColor = [UIColor yellowColor];
         self.tabBarItem.title = @"recommend";
         self.tabBarItem.image = [UIImage imageNamed:@"file path5"];
         self.tabBarItem.selectedImage = [UIImage imageNamed:@"file path6"];
@@ -35,15 +34,17 @@
     scrollView.contentSize = CGSizeMake(self.view.bounds.size.width*3, self.view.bounds.size.height);
     
     
-    NSArray *colors = @[[UIColor lightGrayColor], [UIColor systemTealColor], [UIColor yellowColor]];
+    NSArray *colors = @[[UIColor colorWithRed:222/255.0 green:195/255.0 blue:154/255.0 alpha:1.0], //light orange
+                        [UIColor colorWithRed:156/255.0 green:195/255.0 blue:154/255.0 alpha:1.0], //matcha
+                        [UIColor colorWithRed:134/255.0 green:186/255.0 blue:211/255.0 alpha:1.0]]; //teal
     
     for(int i=0; i<3; i++){
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(scrollView.bounds.size.width*i, 0, scrollView.bounds.size.width, scrollView.bounds.size.height)];
         view.backgroundColor = [colors objectAtIndex:i];
         [scrollView addSubview: view];
         
-        UIView *rectangle = [[UIView alloc]initWithFrame:CGRectMake(100, 100, 100, 40)];
-        rectangle.backgroundColor = [UIColor darkGrayColor];
+        UIView *rectangle = [[UIView alloc]initWithFrame:CGRectMake(140, 100, 100, 40)];
+        rectangle.backgroundColor = [UIColor whiteColor];
         
         
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(rectangleClick)];

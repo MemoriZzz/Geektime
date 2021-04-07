@@ -29,13 +29,14 @@
 - (void)viewDidLoad {
 
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds]; // create a tableview whose size is as same as view;
-    tableView.backgroundColor = [UIColor systemRedColor];
+    tableView.backgroundColor = [UIColor blueColor];
     
     tableView.dataSource = self;
     tableView.delegate = self;
     
     [self.view addSubview:tableView];
 
+    
 
 
 }
@@ -71,7 +72,7 @@
     somenews.title = [NSString stringWithFormat:@"%@", @(indexPath.row)];
 //    somenews.view.backgroundColor = [UIColor colorWithRed:234.0/255.0 green:185.0/255.0 blue:185.0/255.0 alpha:1.0]; //coral
     somenews.view.backgroundColor = [UIColor whiteColor];
-    [self.navigationController pushViewController:somenews animated:NO];
+    [self.navigationController pushViewController:somenews animated:YES];
 }
 
 
