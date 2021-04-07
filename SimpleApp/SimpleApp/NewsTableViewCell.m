@@ -13,7 +13,10 @@
 @property(nonatomic, strong, readwrite) UILabel *sourceLabel;
 @property(nonatomic, strong, readwrite) UILabel *commentLabel;
 @property(nonatomic, strong, readwrite) UILabel *timeLabel;
+
 @property(nonatomic, strong, readwrite) UIImageView *newsImageView;
+
+@property(nonatomic, strong, readwrite) UIButton *deleteButton;
 
 
 @end
@@ -59,7 +62,17 @@
         self.newsImageView.backgroundColor = [UIColor grayColor];
         self.newsImageView.contentMode = UIViewContentModeScaleAspectFit; //contentMode is a UIView property
         [self.contentView addSubview:self.newsImageView];
-  
+        
+        
+        self.deleteButton = [[UIButton alloc] initWithFrame:CGRectMake(270, 74, 10, 10)];
+        [self.deleteButton setTitle:@"x" forState:UIControlStateNormal];
+        [self.deleteButton setTitle:@"v" forState:UIControlStateHighlighted];
+        //target-action
+        [self.deleteButton addTarget:self action:@selector(deleteButtonClick) forControlEvents:UIControlEventTouchUpInside];
+        self.deleteButton.backgroundColor = [UIColor grayColor];
+        [self.contentView addSubview:self.deleteButton];
+        
+        
     }
     
     return self;
@@ -84,6 +97,10 @@
     self.timeLabel.frame = CGRectMake(self.commentLabel.frame.origin.x +self.commentLabel.frame.size.width +15, self.timeLabel.frame.origin.y, self.timeLabel.frame.size.width, self.timeLabel.frame.size.height);
     
     self.newsImageView.image = [UIImage imageNamed:@"images.bundle/covid.png"];
+}
+
+- (void) deleteButtonClick{
+    NSLog(@"Delete Button Clicked");
 }
 
 @end
