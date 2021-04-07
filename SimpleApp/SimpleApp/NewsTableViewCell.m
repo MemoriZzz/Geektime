@@ -72,7 +72,6 @@
         self.deleteButton.backgroundColor = [UIColor grayColor];
         [self.contentView addSubview:self.deleteButton];
         
-        
     }
     
     return self;

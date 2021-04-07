@@ -7,7 +7,7 @@
 
 #import "RecommendViewController.h"
 
-@interface RecommendViewController () <UIScrollViewDelegate>
+@interface RecommendViewController () <UIScrollViewDelegate, UIGestureRecognizerDelegate>
 
 @end
 
@@ -42,12 +42,30 @@
         view.backgroundColor = [colors objectAtIndex:i];
         [scrollView addSubview: view];
         
+        UIView *rectangle = [[UIView alloc]initWithFrame:CGRectMake(100, 100, 100, 40)];
+        rectangle.backgroundColor = [UIColor darkGrayColor];
+        
+        
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(rectangleClick)];
+        tapGesture.delegate = self;
+        [rectangle addGestureRecognizer:tapGesture]; //register a tap gesture for rectangle view
+
+        [view addSubview:rectangle];
     }
     //enable pages
     scrollView.pagingEnabled = YES;
     scrollView.delegate = self;
     
     [self.view addSubview:scrollView];
+}
+
+- (void) rectangleClick{
+    NSLog(@"click rectangle");
+}
+
+//UIGestureRecognizerDelegate optional
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
+    return YES; //if NO, system won't implement action
 }
 
 //UIScrollViewDelegate optional methods
