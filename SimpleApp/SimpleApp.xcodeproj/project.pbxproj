@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010E2475261D53DA008E02A2 /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 010E2474261D53DA008E02A2 /* NewsTableViewCell.m */; };
 		01DA20B3261C54C30094F6CD /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DA20B2261C54C30094F6CD /* VideoViewController.m */; };
 		01DA20BC261C8BE80094F6CD /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DA20BB261C8BE80094F6CD /* RecommendViewController.m */; };
 		01E22B74261AF13900E542BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E22B73261AF13900E542BA /* AppDelegate.m */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		010E2473261D53DA008E02A2 /* NewsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsTableViewCell.h; sourceTree = "<group>"; };
+		010E2474261D53DA008E02A2 /* NewsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCell.m; sourceTree = "<group>"; };
 		01DA20B1261C54C30094F6CD /* VideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
 		01DA20B2261C54C30094F6CD /* VideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
 		01DA20BA261C8BE80094F6CD /* RecommendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecommendViewController.h; sourceTree = "<group>"; };
@@ -66,14 +69,16 @@
 				01E22B73261AF13900E542BA /* AppDelegate.m */,
 				01E22B78261AF13900E542BA /* NewsViewController.h */,
 				01E22B79261AF13900E542BA /* NewsViewController.m */,
-				01E22B7E261AF13900E542BA /* Assets.xcassets */,
-				01E22B80261AF13900E542BA /* LaunchScreen.storyboard */,
-				01E22B83261AF13900E542BA /* Info.plist */,
-				01E22B84261AF13900E542BA /* main.m */,
+				010E2473261D53DA008E02A2 /* NewsTableViewCell.h */,
+				010E2474261D53DA008E02A2 /* NewsTableViewCell.m */,
 				01DA20B1261C54C30094F6CD /* VideoViewController.h */,
 				01DA20B2261C54C30094F6CD /* VideoViewController.m */,
 				01DA20BA261C8BE80094F6CD /* RecommendViewController.h */,
 				01DA20BB261C8BE80094F6CD /* RecommendViewController.m */,
+				01E22B7E261AF13900E542BA /* Assets.xcassets */,
+				01E22B80261AF13900E542BA /* LaunchScreen.storyboard */,
+				01E22B83261AF13900E542BA /* Info.plist */,
+				01E22B84261AF13900E542BA /* main.m */,
 			);
 			path = SimpleApp;
 			sourceTree = "<group>";
@@ -148,6 +153,7 @@
 			files = (
 				01E22B7A261AF13900E542BA /* NewsViewController.m in Sources */,
 				01DA20BC261C8BE80094F6CD /* RecommendViewController.m in Sources */,
+				010E2475261D53DA008E02A2 /* NewsTableViewCell.m in Sources */,
 				01E22B74261AF13900E542BA /* AppDelegate.m in Sources */,
 				01DA20B3261C54C30094F6CD /* VideoViewController.m in Sources */,
 				01E22B85261AF13900E542BA /* main.m in Sources */,

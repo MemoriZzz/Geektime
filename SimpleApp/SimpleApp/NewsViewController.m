@@ -6,6 +6,8 @@
 //
 
 #import "NewsViewController.h"
+#import "NewsTableViewCell.h"
+
 
 
 @interface NewsViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -42,13 +44,18 @@
     return 20;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (NewsTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
-    cell.textLabel.text = [NSString localizedStringWithFormat: @"MAIN HEADING - %@", @(indexPath.row)];
-    cell.detailTextLabel.text = @"SUB HEADING";
-    cell.imageView.image = [UIImage imageNamed:@"image/path"];
+    NewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"id"];
+    if(!cell){
+        cell = [[NewsTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
+    }
+//    cell.textLabel.text = [NSString localizedStringWithFormat: @"MAIN HEADING - %@", @(indexPath.row)];
+//    cell.detailTextLabel.text = @"SUB HEADING";
+//    cell.imageView.image = [UIImage imageNamed:@"image/path"];
     cell.backgroundColor = [UIColor colorWithRed:234.0/255.0 green:185.0/255.0 blue:185.0/255.0 alpha:1.0]; //coral
+    
+    [cell layoutTableViewCell];
     
     return cell;
 }

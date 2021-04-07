@@ -35,7 +35,7 @@
     scrollView.contentSize = CGSizeMake(self.view.bounds.size.width*3, self.view.bounds.size.height);
     
     
-    NSArray *colors = @[[UIColor redColor], [UIColor systemTealColor], [UIColor yellowColor]];
+    NSArray *colors = @[[UIColor lightGrayColor], [UIColor systemTealColor], [UIColor yellowColor]];
     
     for(int i=0; i<3; i++){
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(scrollView.bounds.size.width*i, 0, scrollView.bounds.size.width, scrollView.bounds.size.height)];
